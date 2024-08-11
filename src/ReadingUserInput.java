@@ -27,27 +27,25 @@ public class ReadingUserInput {
         Scanner scanner = new Scanner(System.in);
         System.out.println("What year were you born?");
         boolean validDOB = false;
+        int yearInt = 0;
         do {
             String year = scanner.nextLine();
             int numberYear = parseInt(year);
 
             if (checkData(currentYear, numberYear)) {
                 validDOB = true;
-                return parseInt(year);
+                yearInt = parseInt(year);
+            } else {
+                System.out.println("The value that you entered is not valid: " + year + " \n Please try again");
             }
-            System.out.println("The value that you entered is not valid: " + year + " \n Please try again");
         } while (!validDOB);
 
-        return 0;
+        return yearInt;
     }
 
     public static boolean checkData(int currentYear, int dateOfBirth) {
         int minimumYear = currentYear - 125;
 
-        if (dateOfBirth < minimumYear || dateOfBirth > currentYear) {
-            return false;
-        }
-
-        return true;
+        return dateOfBirth >= minimumYear && dateOfBirth <= currentYear;
     }
 }

@@ -35,8 +35,8 @@ public class Worker {
                 true
         );
 
-        System.out.println("Employee age is: " + retiredEmp.getAge());
-        System.out.println("Salary is " + retiredEmp.collectPay());
+        System.out.printf("Employee age is: %d", retiredEmp.getAge());
+        System.out.printf("Salary is %f", retiredEmp.collectPay());
         System.out.println(retiredEmp.toString());
         System.out.println("______");
 
@@ -48,8 +48,8 @@ public class Worker {
                 50.10
         );
 
-        System.out.println("Employee age is: " + hourlyEmployee.getAge());
-        System.out.println("Salary is " + hourlyEmployee.collectPay());
+        System.out.printf("Employee age is: %d", hourlyEmployee.getAge());
+        System.out.printf("Salary is %f", hourlyEmployee.collectPay());
         System.out.println(hourlyEmployee.toString());
         System.out.println("______");
 
@@ -99,15 +99,15 @@ class SalariedEmployee extends Employee {
 
     @Override
     public String toString() {
-        return "SalariedEmployee{" +
-                "isRetired=" + isRetired +
-                ", employeeId=" + employeeId +
-                ", hireDate='" + hireDate + '\'' +
-                ", name='" + name + '\'' +
-                ", birthDate='" + birthDate + '\'' +
-                ", endDate='" + endDate + '\'' +
-                ", annualSalary=" + annualSalary +
-                "} " + super.toString();
+        return "SalariedEmployee{\n" +
+                "\tisRetired=" + isRetired +
+                ",\n\temployeeId=" + employeeId +
+                ",\n\thireDate='" + hireDate + '\'' +
+                ",\n\tname='" + name + '\'' +
+                ",\n\tbirthDate='" + birthDate + '\'' +
+                ",\n\tendDate='" + endDate + '\'' +
+                ",\n\tannualSalary=" + annualSalary +
+                "\n} " + super.toString();
     }
 }
 
